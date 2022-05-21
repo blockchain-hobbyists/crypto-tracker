@@ -8,6 +8,7 @@ django = "*"
 requests = "*"
 pillow = "*"
 django-admin-autocomplete-filter = "*"
+pytz = "*"
 
 [dev-packages]
 mypy = "*"
