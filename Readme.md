@@ -1,8 +1,7 @@
 # CRYPTO-TRACKER
 
-[![Python Badge](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue.svg)]()
-![example workflow](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/pylint.yml/badge.svg)
-![example workflow](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/test.yml/badge.svg)
+[![Python Badge](https://img.shields.io/badge/python-3.10-blue.svg)]()
+![example workflow](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/main.yml/badge.svg)
 
 Crypto-Tracker pretends to be a useful application for traders providing a simple interface to track crypto transactions.
 
@@ -16,7 +15,7 @@ Crypto-Tracker pretends to be a useful application for traders providing a simpl
 
 ## Install
 
-- python 3.8 or higher
+- python 3.10
 - `pipenv install` or `pip install -r requirements.txt`
 
 ```bash

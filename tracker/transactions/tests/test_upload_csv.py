@@ -19,4 +19,3 @@ class TransactionTestCase(TestCase):
 
     def test_upload_csv(self):
         management.call_command('upload_transactions_csv', '--path', file)
-        Tras
