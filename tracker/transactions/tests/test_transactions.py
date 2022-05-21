@@ -1,26 +1,21 @@
 from decimal import Decimal
-
-from django.test import TestCase
-from django.contrib.auth.models import User
-from transactions.models import Exchange, OrderType, Pair, Transaction
-from transactions.management.commands.upsert_transactions_meta import Command as UpsertTMeta
-
-from assets.models import Asset
-from assets.management.commands.upsert_assets_meta import Command as UpsertAMeta
-
-from users.models import Balance
-
 from datetime import datetime
 import pytz
+from django.test import TestCase
+from django.core import management
+from django.contrib.auth.models import User
+
+from transactions.models import Exchange, OrderType, Pair, Transaction
+from assets.models import Asset
+from users.models import Balance
 
 
 class TransactionTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        UpsertTMeta().handle()
-        UpsertAMeta().handle()
         User.objects.create_superuser('myuser', 'myemail@test.com', 'password')
+        management.call_command('upsert_all_meta')
 
     def test_assets(self):
         """
@@ -34,8 +29,10 @@ class TransactionTestCase(TestCase):
         order_type = OrderType.objects.first()
 
         # Add founds 100€, 0 BTC
-        Balance.objects.create(user=user, asset=eur, amount=100)
-        Balance.objects.create(user=user, asset=btc, amount=0)
+        Balance.objects.update_or_create(
+            user=user, asset=eur, defaults={'amount': 100})
+        Balance.objects.update_or_create(
+            user=user, asset=btc, defaults={'amount': 0})
 
         # Executed BTC-EUR limit buy order
         Transaction.objects.create(
