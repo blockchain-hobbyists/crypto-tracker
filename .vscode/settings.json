@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSave": true,
+  "mypy.runUsingActiveInterpreter": true
+}

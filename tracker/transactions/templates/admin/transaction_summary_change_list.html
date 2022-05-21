@@ -1,0 +1,103 @@
+{% extends "admin/change_list.html" %} {% block content_title %}
+<h1>Transactions Summary</h1>
+{% endblock %} {% block result_list %}
+<div class="results">
+  <table>
+    <caption class="h2">
+      Buy Transactions Summary
+    </caption>
+    <thead>
+      <tr>
+        <th>
+          <div class="text">
+            <a>Asset</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Avg Price</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Spending</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Invested</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Fees</a>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for asset in buy_transactions_summary %}
+      <tr class="table">
+        <td>{{ asset.asset }}</td>
+        <td>{{ asset.avg_buy_price }}</td>
+        <td>{{ asset.total_spending }}</td>
+        <td>{{ asset.total_invested }}</td>
+        <td>{{ asset.total_fees }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <table>
+    <caption class="h2">
+      Sell Transactions Summary
+    </caption>
+    <thead>
+      <tr>
+        <th>
+          <div class="text">
+            <a>Asset</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Avg Sell Price</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Amount</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Received (after fees)</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Fees</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a>Total Sold</a>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for asset in sell_transactions_summary %}
+      <tr class="table">
+        <td>{{ asset.asset }}</td>
+        <td>{{ asset.avg_sell_price }}</td>
+        <td>{{ asset.total_amount }}</td>
+        <td>{{ asset.total_received }}</td>
+        <td>{{ asset.total_fees }}</td>
+        <td>{{ asset.total_sold }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %} {% block pagination %}{% endblock %}

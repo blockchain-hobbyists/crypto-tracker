@@ -1,0 +1,11 @@
+db.sqlite3
+.dccache
+__pycache__
+.coverage
+coverage.xml
+htmlcov
+transactions.csv
+.env
+static
+analysis.ipynb
+django_initializer.py
