@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+requests = "*"
+pillow = "*"
+django-admin-autocomplete-filter = "*"
+
+[dev-packages]
+mypy = "*"
+autopep8 = "*"
+pylint = "*"
+coverage = "*"
+django-stubs = "*"
+jupyter = "*"
+django-extensions = "*"
