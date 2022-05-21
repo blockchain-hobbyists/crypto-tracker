@@ -23,7 +23,6 @@ jobs:
           cache: pip
 
       - name: Install and Test
-        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
