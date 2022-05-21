@@ -2,6 +2,10 @@
 
 [![Python Badge](https://img.shields.io/badge/python-3.10-blue.svg)]()
 ![example workflow](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/main.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=coverage)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=bugs)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
 
 Crypto-Tracker pretends to be a useful application for traders providing a simple interface to track crypto transactions.
 
