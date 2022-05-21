@@ -30,21 +30,6 @@ jobs:
         run: |
           pipenv run coverage run --source='./tracker' tracker/manage.py test && pipenv run coverage xml
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: coverage.xml
-          path: coverage.xml
-
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: coverage.xml
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
