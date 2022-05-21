@@ -47,7 +47,7 @@ EXCHANGES = [
 python tracker/manage.py upsert_all_meta
 ```
 
-http://127.0.0.1:8000/admin/
+## Check Admin UI at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 ## Import transactions from csv
 
