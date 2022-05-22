@@ -1,0 +1,11 @@
+.git/
+.github
+.vscode
+.dockerignore
+.env
+.docker-compose.yml
+mypy.ini
+Readme.md
+sonar-project.properties
+transactions.csv
+data/

@@ -10,6 +10,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/tracker/manage.py",
       "args": ["runserver"],
+      "envFile": "${workspaceFolder}/.env",
       "django": true,
       "justMyCode": true
     },
@@ -19,6 +20,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/tracker/manage.py",
       "args": ["test"],
+      "envFile": "${workspaceFolder}/.env",
       "django": true,
       "justMyCode": true
     },
@@ -28,6 +30,17 @@
       "request": "launch",
       "program": "${workspaceFolder}/tracker/manage.py",
       "args": ["upload_transactions_csv"],
+      "envFile": "${workspaceFolder}/.env",
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "Update Pairs Prices",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tracker/manage.py",
+      "args": ["update_pairs_prices"],
+      "envFile": "${workspaceFolder}/.env",
       "django": true,
       "justMyCode": true
     }

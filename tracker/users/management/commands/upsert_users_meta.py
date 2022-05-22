@@ -20,7 +20,14 @@ class Command(BaseCommand):
         assets = settings.ASSETS
         for user in get_user_model().objects.all():
             for asset in assets:
-                print(
-                    f'Create balance for user: {user.username} and asset: {asset}')
-                Balance.objects.update_or_create(
-                    user=user, asset=Asset.objects.get(name=asset), amount=0)
+                asset_obj = Asset.objects.get(name=asset)
+                try:
+                    Balance.objects.get(user=user, asset=asset_obj)
+                except Balance.DoesNotExist:
+                    print(
+                        f'Create balance for user: {user.username} and asset: {asset}')
+                    Balance.objects.create(
+                        user=user,
+                        asset=asset_obj,
+                        amount=0
+                    )

@@ -11,13 +11,40 @@ Crypto-Tracker pretends to be a useful application for traders providing a simpl
 
 ## How it works
 
-1. Install the app
-2. Configure your assets and exchanges
+1. Configure your assets and exchanges
+2. Install the app
 3. Create or import transactions
 4. Keep your asset balances updated
 5. Get insights from your assets or market movements
 
+## Configure settings and environment variables
+
+### Settings example
+
+```python
+ASSETS = [
+    'USD',
+    'BTC',
+]
+EXCHANGES = [
+    ('Gemini', ['Limit Buy','Limit Sell']),
+]
+```
+
+### .env file example
+
+```bash
+COINMARKETCAP_API_KEY=<YOUR_KEY>
+POSTGRES_NAME=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+DJANGO_SETTINGS_MODULE=settings.postgres
+PORT=8000
+```
+
 ## Install
+
+### Python environment
 
 - python 3.10
 - `pipenv install` or `pip install -r requirements.txt`
@@ -29,16 +56,11 @@ python tracker/manage.py collectstatic
 python tracker/manage.py runserver
 ```
 
-## Configure tracker/settings/base.py
+## Docker compose
 
-```python
-ASSETS = [
-    'USD',
-    'BTC',
-]
-EXCHANGES = [
-    ('Gemini', ['Limit Buy','Limit Sell']),
-]
+```bash
+docker-compose up
+
 ```
 
 ## Update DB

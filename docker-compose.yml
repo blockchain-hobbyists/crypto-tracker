@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+
+  postgres:
+    image: postgres:14
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  
+  tracker:
+    build: .
+    command: sh scripts/start-dev-server.sh
+    volumes:
+      - ./tracker:/code
+      - ./scripts:/code/scripts
+      - ./transactions.csv:/transactions.csv
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  sync_deamon:
+    build: .
+    command: sh scripts/start-sync.sh
+    volumes:
+      - ./tracker:/code
+      - ./scripts:/code/scripts
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - tracker

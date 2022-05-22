@@ -9,3 +9,4 @@ transactions.csv
 static
 analysis.ipynb
 django_initializer.py
+data/

@@ -12,17 +12,17 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'secret')
 
 DEBUG_STR = os.environ.get('DJANGO_DEBUG', 'true')
 DEBUG = DEBUG_STR.lower() == 'true'
 
-#ALLOWED_HOSTS = []
-
-os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -148,3 +148,9 @@ EXCHANGES = [
     ('Revolut', ['Free Stock Buy', 'Stock Buy', 'Commodity Buy']),
     ('Ledger/MoonPay', ['Card Buy', 'Card Sell']),
 ]
+
+COINMARKETCAP = {
+    'API_KEY': os.environ.get('COINMARKETCAP_API_KEY', ''),
+    'QUOTE': 'EUR',
+    'BASES': ['BTC', 'ETH', 'SOL', 'ALGO']
+}

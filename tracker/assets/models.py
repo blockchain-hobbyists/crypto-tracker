@@ -38,3 +38,6 @@ class PairPrice(models.Model):
     pair = models.ForeignKey(Pair, on_delete=DO_NOTHING)
     price = models.DecimalField(decimal_places=10, max_digits=1000)
     ts = models.DateTimeField()
+
+    def __str__(self) -> str:
+        return f'{self.pair} - {self.price} - {self.ts}'

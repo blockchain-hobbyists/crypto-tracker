@@ -9,6 +9,8 @@ requests = "*"
 pillow = "*"
 django-admin-autocomplete-filter = "*"
 pytz = "*"
+psycopg2-binary = "*"
+django-environ = "*"
 
 [dev-packages]
 mypy = "*"
