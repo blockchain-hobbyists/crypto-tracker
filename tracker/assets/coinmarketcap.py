@@ -1,10 +1,8 @@
-import os
-
-from datetime import datetime
-import pytz
-import requests
 from .models import Pair, PairPrice
-
+import requests
+import pytz
+from datetime import datetime
+import os
 
 COINMARKETCAP_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 

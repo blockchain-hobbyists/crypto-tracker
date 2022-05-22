@@ -13,9 +13,10 @@ Crypto-Tracker pretends to be a useful application for traders providing a simpl
 
 1. Configure your assets and exchanges
 2. Install the app
-3. Create or import transactions
-4. Keep your asset balances updated
-5. Get insights from your assets or market movements
+3. Configure your assets and exchanges
+4. Create or import transactions
+5. Keep your asset balances updated
+6. Get insights from your assets or market movements
 
 ## Configure settings and environment variables
 
@@ -60,7 +61,18 @@ python tracker/manage.py runserver
 
 ```bash
 docker-compose up
+```
 
+## Configure tracker/settings/base.py
+
+```python
+ASSETS = [
+    'USD',
+    'BTC',
+]
+EXCHANGES = [
+    ('Gemini', ['Limit Buy','Limit Sell']),
+]
 ```
 
 ## Update DB
