@@ -21,6 +21,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+          fetch-depth: 0
 
       - name: Install and Test
         run: |
