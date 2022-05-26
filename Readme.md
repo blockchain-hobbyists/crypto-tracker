@@ -1,7 +1,7 @@
 # CRYPTO-TRACKER
 
 [![Python Badge](https://img.shields.io/badge/python-3.10-blue.svg)]()
-![example workflow](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/main.yml/badge.svg)
+[![Main](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/blockchain-hobbyists/crypto-tracker/actions/workflows/main.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=coverage)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=blockchain-hobbyists_crypto-tracker&metric=bugs)](https://sonarcloud.io/summary/new_code?id=blockchain-hobbyists_crypto-tracker)
@@ -101,3 +101,20 @@ DATE_TIME | PAIR | ORDER_TYPE | EXCHANGE | PRICE | AMOUNT | FEE | USERNAME
 
 Run import command `python tracker/manage.py upload_transactions_csv`
 or `python tracker/manage.py upload_transactions_csv --path full-path-to-csv`
+
+## Pair prices sync
+
+Coinmarketcap API is used to get pairs prices. By default, the quote currency is EUR.
+
+Change Coinmarketcap settings to modify its behaviour. Every QUOTE - BASE combination configured will be requested to the API.
+
+```python
+COINMARKETCAP = {
+    'API_KEY': os.environ.get('COINMARKETCAP_API_KEY', ''),
+    'QUOTE': 'EUR',
+    'BASES': ['BTC', 'ETH', 'SOL', 'ALGO']
+}
+```
+
+Run the command `python tracker/manage.py update_pair_prices` to update prices.
+Run the command `python tracker/manage.py update_pair_prices --infinite-run` to keep updating prices every minute.
