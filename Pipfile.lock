@@ -1,11 +1,7 @@
 {
     "_meta": {
         "hash": {
-<<<<<<< HEAD
             "sha256": "f05eac3f58138f6d6ff4e510155450bb8cc29c4931aaf50a870c48115544cc58"
-=======
-            "sha256": "73e811ed936fe22a4eca8c7be8001ff8a9be35c273ca26682770d3518baf695b"
->>>>>>> origin/main
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -58,7 +54,6 @@
             "index": "pypi",
             "version": "==0.7.1"
         },
-<<<<<<< HEAD
         "django-environ": {
             "hashes": [
                 "sha256:42593bee519a527602a467c7b682aee1a051c2597f98c45f4f4f44169ecdb6e5",
@@ -67,8 +62,6 @@
             "index": "pypi",
             "version": "==0.8.1"
         },
-=======
->>>>>>> origin/main
         "idna": {
             "hashes": [
                 "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff",
@@ -121,7 +114,6 @@
             "index": "pypi",
             "version": "==9.1.1"
         },
-<<<<<<< HEAD
         "psycopg2-binary": {
             "hashes": [
                 "sha256:01310cf4cf26db9aea5158c217caa92d291f0500051a6469ac52166e1a16f5b7",
@@ -184,8 +176,6 @@
             "index": "pypi",
             "version": "==2.9.3"
         },
-=======
->>>>>>> origin/main
         "pytz": {
             "hashes": [
                 "sha256:1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7",
