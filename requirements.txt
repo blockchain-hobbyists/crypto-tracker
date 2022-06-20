@@ -5,9 +5,9 @@
 #    pipenv lock --requirements
 #
 
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 asgiref==3.5.2; python_version >= '3.7'
-certifi==2022.5.18.1; python_version >= '3.6'
+certifi==2022.6.15; python_version >= '3.6'
 charset-normalizer==2.0.12; python_version >= '3'
 django-admin-autocomplete-filter==0.7.1
 django==4.0.4
